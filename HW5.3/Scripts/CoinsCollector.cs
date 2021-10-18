@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinCollector : MonoBehaviour
+public class CoinsCollector : MonoBehaviour
 {
     private int _coinsQuality;
 
@@ -16,7 +16,7 @@ public class CoinCollector : MonoBehaviour
         if (collision.TryGetComponent<Coin>(out Coin coin))
         {
             _coinsQuality++;
-            Debug.Log($"Собрано монет - {_coinsQuality}");
+            Debug.Log($"Г‘Г®ГЎГ°Г Г­Г® Г¬Г®Г­ГҐГІ - {_coinsQuality}");
         }
     }
 }
