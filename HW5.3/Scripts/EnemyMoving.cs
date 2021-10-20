@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyMoving : MonoBehaviour
 {
     [SerializeField] private Transform _path;
     [SerializeField] private float _speed;
+    [SerializeField] private UnityEvent _event;
 
     private Transform[] _points;
     private int _currentPoint;
@@ -41,6 +43,7 @@ public class EnemyMoving : MonoBehaviour
         if (collision.TryGetComponent<Hero>(out Hero hero))
         {
             Destroy(collision.gameObject);
+            _event.Invoke();
         }
     }
 }
